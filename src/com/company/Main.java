@@ -44,8 +44,22 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+        // 1 способ объявления вложенного класса
 	    Main main = new Main();
 	    Innner innner = main.new Innner();
+
 	    innner.method();
+
+	    OtherClass otherClass = new OtherClass();
+	    otherClass.string();
+    }
+}
+
+class OtherClass{
+    // 2 способ объявления вложенного класса
+    Main.Innner innnerOther = new Main().new Innner();
+
+    void string(){
+        innnerOther.method();
     }
 }
